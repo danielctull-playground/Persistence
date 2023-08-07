@@ -1,7 +1,7 @@
 
 import Foundation
 
-public struct PersistedKey<Value: Codable> {
+public struct PersistenceKey<Value: Codable> {
 
     let url: URL
     private let defaultValue: Value
@@ -12,7 +12,7 @@ public struct PersistedKey<Value: Codable> {
     }
 }
 
-extension PersistedKey {
+extension PersistenceKey {
 
     /// Creates the file if it doesn't exist.
     // Bit of a hack.

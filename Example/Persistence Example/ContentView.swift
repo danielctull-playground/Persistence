@@ -6,7 +6,7 @@ struct Person: Codable {
     var name: String
 }
 
-extension PersistedKey where Value == Person {
+extension PersistenceKey where Value == Person {
     static let person = Self(
         url: URL.documentsDirectory.appendingPathComponent("Person"),
         defaultValue: Person(name: ""))

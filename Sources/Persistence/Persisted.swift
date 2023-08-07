@@ -5,9 +5,9 @@ import SwiftUI
 public struct Persisted<Value: Codable>: DynamicProperty {
 
     @ObservedObject private var fileObserver: FileObserver
-    private let key: PersistedKey<Value>
+    private let key: PersistenceKey<Value>
 
-    public init(_ key: PersistedKey<Value>) {
+    public init(_ key: PersistenceKey<Value>) {
         key.createFile()
         self.fileObserver = FileObserver(url: key.url)
         self.key = key
